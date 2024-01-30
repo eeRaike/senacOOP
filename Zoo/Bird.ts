@@ -15,6 +15,6 @@ export class Bird extends Animal{
     }
 
     getWingspan(){
-        
+        return this.wingspan;
     }
 }
