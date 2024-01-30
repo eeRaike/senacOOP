@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Warrior_1 = require("./Warrior");
+var Monster_1 = require("./Monster");
+var myWarrior = new Warrior_1.Warrior("Player", "Berserk", 5);
+var myMonster = new Monster_1.Monster("Roberto");
+myWarrior.info();
+myMonster.info();
+myWarrior.dealDamage(myMonster);
+myMonster.dealDamage(myWarrior);
