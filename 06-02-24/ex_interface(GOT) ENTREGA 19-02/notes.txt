@@ -1,0 +1,4 @@
+manter os nomes de arquivos/classes/Interfaces EXATAMENTE iguais aos do documento
+
+
+Casas: STARK | TARGARYEN | LANNISTER | BARATHEON | GREYJOY | ARRYN | TULLY

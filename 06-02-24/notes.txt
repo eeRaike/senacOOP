@@ -1,0 +1,1 @@
+Sempre criar um arquivo separado para cada Classe e Interface
