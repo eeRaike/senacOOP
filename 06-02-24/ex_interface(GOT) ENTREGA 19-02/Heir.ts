@@ -5,4 +5,9 @@ export class Heir implements HouseHeir {
     idade: number;
     position: number;
     
+    constructor(name:string,idade:number,position:number){
+        this.name = name;
+        this.idade = idade;
+        this.position = position;
+    }
 }
