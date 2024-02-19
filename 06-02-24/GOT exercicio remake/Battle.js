@@ -41,8 +41,18 @@ function BattleOfTheHouses() {
             NobleHouses.shift();
         }
     }
-    for (var i = 0; i < NobleHouses.length; i++) {
-        console.log("A Casa vencedora \u00E9 a ".concat(NobleHouses[i].name, " \n Com a Forca Militar > ").concat(NobleHouses[i].MilitaryForce, " "));
-    }
+    NobleHouses.sort();
+    console.log("A Casa vencedora \u00E9 a ".concat(NobleHouses[0].name, " \n Com a Forca Militar > ").concat(NobleHouses[0].MilitaryForce, " "));
 }
 BattleOfTheHouses();
+/* for (let i = 0; i < NobleHouses.length; i++) {
+     console.log(`A Casa vencedora é a ${NobleHouses[i].name} \n Com a Forca Militar > ${NobleHouses[i].MilitaryForce} `)
+     console.log(NobleHouses.indexOf(NobleHouses[i]));
+     
+     
+     
+ }*/
+/*
+let WinnerHouse = NobleHouses.pop()
+console.log(WinnerHouse?.name);
+console.log(`A Casa vencedora é a ${WinnerHouse?.name} \n Com a Forca Militar > ${WinnerHouse?.MilitaryForce} `) */ 
