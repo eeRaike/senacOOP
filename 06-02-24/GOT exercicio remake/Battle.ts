@@ -48,13 +48,15 @@ for (let i = 0; i < CasasNobres.length + 2; i++) {
     else if(CasasNobres[0].forcaMilitar < CasasNobres[CasasNobres.length-1].forcaMilitar) {
         console.log(`Combate > ${CasasNobres[0].name} VS ${CasasNobres[CasasNobres.length-1].name} \nForca Militar > ${CasasNobres[0].forcaMilitar} || ${CasasNobres[CasasNobres.length-1].forcaMilitar} \nVence> ${CasasNobres[CasasNobres.length-1].name}`);
         CasasNobres.shift()
-    }
-    else{
-        console.log(`A Casa vencedora é a ${CasasNobres[0].name} \nForca Militar > ${CasasNobres[0].forcaMilitar} `);
         
     }
-    
-    
-} }
+       
+} 
+    for (let i = 0; i < CasasNobres.length; i++) {
+        console.log(`A Casa vencedora é a ${CasasNobres[i].name} \n Com a Forca Militar > ${CasasNobres[i].forcaMilitar} `)
+        
+        
+    }
+}
 
 BattleOfTheHouses()

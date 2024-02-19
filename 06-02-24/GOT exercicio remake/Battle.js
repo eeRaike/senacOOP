@@ -40,9 +40,9 @@ function BattleOfTheHouses() {
             console.log("Combate > ".concat(CasasNobres[0].name, " VS ").concat(CasasNobres[CasasNobres.length - 1].name, " \nForca Militar > ").concat(CasasNobres[0].forcaMilitar, " || ").concat(CasasNobres[CasasNobres.length - 1].forcaMilitar, " \nVence> ").concat(CasasNobres[CasasNobres.length - 1].name));
             CasasNobres.shift();
         }
-        else {
-            console.log("A Casa vencedora \u00E9 a ".concat(CasasNobres[0].name, " \nForca Militar > ").concat(CasasNobres[0].forcaMilitar, " "));
-        }
+    }
+    for (var i = 0; i < CasasNobres.length; i++) {
+        console.log("A Casa vencedora \u00E9 a ".concat(CasasNobres[i].name, " \n Com a Forca Militar > ").concat(CasasNobres[i].forcaMilitar, " "));
     }
 }
 BattleOfTheHouses();
