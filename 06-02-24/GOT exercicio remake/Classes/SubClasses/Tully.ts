@@ -1,8 +1,8 @@
 import { NobleHouse } from "../NobleHouse";
 
-export class Stark extends NobleHouse {
+export class Tully extends NobleHouse {
 
-    soldados: number = 18000
+    soldados: number = 17000
     forcaMilitar: number = this.soldados
 
      }

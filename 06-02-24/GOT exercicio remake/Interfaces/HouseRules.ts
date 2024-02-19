@@ -1,4 +1,4 @@
-import { Heir } from "../Classes/HeirY";
+import { Heir } from "../Classes/Heir";
 
 export interface HouseRules {
     
@@ -6,9 +6,10 @@ export interface HouseRules {
     name: string;
     motto:string;
     heirList: Array<Heir>
+    forcaMilitar: number
     
 
-    addHeir():void
+    addHeir(heirInsert: Heir):void
     houseInfo():void
 
 }
