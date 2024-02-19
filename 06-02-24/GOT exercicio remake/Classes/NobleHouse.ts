@@ -6,7 +6,7 @@ export class NobleHouse implements HouseRules{
         descBrasao: string;
         name: string;
         motto: string;
-        forcaMilitar: number;
+        MilitaryForce: number;
 
     constructor(descBrasao: string,name:string, motto:string) {
         this.name = name;

@@ -2,8 +2,8 @@ import { NobleHouse } from "../NobleHouse";
 
 export class Arryn extends NobleHouse {
 
-    soldados: number = 20000
-    forcaMilitar: number = this.soldados
+    soldiers: number = 20000
+    MilitaryForce: number = this.soldiers
 
      }
 

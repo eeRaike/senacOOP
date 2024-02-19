@@ -16,16 +16,16 @@ function testfunction(): void{
 for (let i = 0; i < array1.length + 2; i++) {
    
     
-    if(array1[0].forcaMilitar > array1[array1.length-1].forcaMilitar){
-        console.log(`Combate > ${array1[0].name} VS ${array1[array1.length-1].name} \nForca Militar > ${array1[0].forcaMilitar} || ${array1[array1.length-1].forcaMilitar} \nVence> ${array1[0].name}`);
+    if(array1[0].MilitaryForce > array1[array1.length-1].MilitaryForce){
+        console.log(`Combate > ${array1[0].name} VS ${array1[array1.length-1].name} \nForca Militar > ${array1[0].MilitaryForce} || ${array1[array1.length-1].MilitaryForce} \nVence> ${array1[0].name}`);
         array1.pop()
     }
-    else if(array1[0].forcaMilitar < array1[array1.length-1].forcaMilitar) {
-        console.log(`Combate > ${array1[0].name} VS ${array1[array1.length-1].name} \nForca Militar > ${array1[0].forcaMilitar} || ${array1[array1.length-1].forcaMilitar} \nVence> ${array1[array1.length-1].name}`);
+    else if(array1[0].MilitaryForce < array1[array1.length-1].MilitaryForce) {
+        console.log(`Combate > ${array1[0].name} VS ${array1[array1.length-1].name} \nForca Militar > ${array1[0].MilitaryForce} || ${array1[array1.length-1].MilitaryForce} \nVence> ${array1[array1.length-1].name}`);
         array1.shift()
     }
     else{
-        console.log(`A Casa vencedora é a ${array1[0].name} \nForca Militar > ${array1[0].forcaMilitar} `);
+        console.log(`A Casa vencedora é a ${array1[0].name} \nForca Militar > ${array1[0].MilitaryForce} `);
         
     }
     

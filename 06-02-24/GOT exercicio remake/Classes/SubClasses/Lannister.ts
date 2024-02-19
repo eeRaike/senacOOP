@@ -2,8 +2,8 @@ import { NobleHouse } from "../NobleHouse";
 
 export class Lannister extends NobleHouse {
 
-    soldados: number = 19000
-    forcaMilitar: number = this.soldados
+    soldiers: number = 19000
+    MilitaryForce: number = this.soldiers
 
 
      }

@@ -6,54 +6,54 @@ import { Stark } from "./Classes/SubClasses/Stark";
 import { Targaryen } from "./Classes/SubClasses/Targaryen";
 import { Tully } from "./Classes/SubClasses/Tully";
 
-const CasasNobres: Array<NobleHouse> = []
+const NobleHouses: Array<NobleHouse> = []
 
-const Casa_Arryn = new Arryn("Um falcão branco voando e uma lua crescente em fundo azul escuro","Arryn","Tão Alto Como a Honra")
-let Herdeiro = new Heir("Harrold Hardyng",17)
-Casa_Arryn.addHeir(Herdeiro)
-Casa_Arryn.houseInfo()
+const Arryn_House = new Arryn("Um falcão branco voando e uma lua crescente em fundo azul escuro","Arryn","Tão Alto Como a Honra")
+let setHeir = new Heir("Harrold Hardyng",17)
+Arryn_House.addHeir(setHeir)
+Arryn_House.houseInfo()
 
-const Casa_Stark = new Stark("A cabeça de um lobo gigante rugindo em um fundo branco sobre verde","Stark","Inverno Está Chegando")
-Herdeiro = new Heir("Arya",18)
-Casa_Stark.addHeir(Herdeiro)
-Casa_Stark.houseInfo()
+const Stark_House = new Stark("A cabeça de um lobo gigante rugindo em um fundo branco sobre verde","Stark","Inverno Está Chegando")
+setHeir = new Heir("Arya",18)
+Stark_House.addHeir(setHeir)
+Stark_House.houseInfo()
 
-const Casa_Targaryen = new Targaryen("Um dragão de três-cabeças vermelho sobre um fundo negro","Targaryen","Fogo e Sangue")
-Herdeiro = new Heir("Viserys",22)
-Casa_Targaryen.addHeir(Herdeiro)
-Herdeiro = new Heir("Daenerys ",17) //Recebi spoiler que a Daenerys morre olhando a Wiki D:
-Casa_Targaryen.addHeir(Herdeiro)
-Casa_Targaryen.houseInfo()
+const Targaryen_House = new Targaryen("Um dragão de três-cabeças vermelho sobre um fundo negro","Targaryen","Fogo e Sangue")
+setHeir = new Heir("Viserys",22)
+Targaryen_House.addHeir(setHeir)
+setHeir = new Heir("Daenerys ",17) //Recebi spoiler que a Daenerys morre olhando a Wiki D:
+Targaryen_House.addHeir(setHeir)
+Targaryen_House.houseInfo()
 
-const Casa_Tully = new Tully("Uma truta prateada saltando em um fundo vermelho e azul","Tully","Família, Dever, Honra")
-Herdeiro = new Heir("Filho de nome desconhecido de Edmure e Roslin",0)
-Casa_Tully.addHeir(Herdeiro)
-Casa_Tully.houseInfo()
+const Tully_House = new Tully("Uma truta prateada saltando em um fundo vermelho e azul","Tully","Família, Dever, Honra")
+setHeir = new Heir("Filho de nome desconhecido de Edmure e Roslin",0)
+Tully_House.addHeir(setHeir)
+Tully_House.houseInfo()
 
-const Casa_Lannister = new Lannister("Um leão dourado em um campo carmesim","Lannister","Ouça-me Rugir!")
-Herdeiro = new Heir("Jaime",48)
-Casa_Lannister.addHeir(Herdeiro)
-Casa_Lannister.houseInfo()
+const Lannister_House = new Lannister("Um leão dourado em um campo carmesim","Lannister","Ouça-me Rugir!")
+setHeir = new Heir("Jaime",48)
+Lannister_House.addHeir(setHeir)
+Lannister_House.houseInfo()
 
-CasasNobres.push(Casa_Arryn,Casa_Stark,Casa_Targaryen,Casa_Tully,Casa_Lannister)
+NobleHouses.push(Arryn_House,Stark_House,Targaryen_House,Tully_House,Lannister_House)
 
 function BattleOfTheHouses(): void{
-for (let i = 0; i < CasasNobres.length + 2; i++) {
+for (let i = 0; i < NobleHouses.length + 2; i++) {
    
     
-    if(CasasNobres[0].forcaMilitar > CasasNobres[CasasNobres.length-1].forcaMilitar){
-        console.log(`Combate > ${CasasNobres[0].name} VS ${CasasNobres[CasasNobres.length-1].name} \nForca Militar > ${CasasNobres[0].forcaMilitar} || ${CasasNobres[CasasNobres.length-1].forcaMilitar} \nVence> ${CasasNobres[0].name}`);
-        CasasNobres.pop()
+    if(NobleHouses[0].MilitaryForce > NobleHouses[NobleHouses.length-1].MilitaryForce){
+        console.log(`Combate > ${NobleHouses[0].name} VS ${NobleHouses[NobleHouses.length-1].name} \nForca Militar > ${NobleHouses[0].MilitaryForce} || ${NobleHouses[NobleHouses.length-1].MilitaryForce} \nVence> ${NobleHouses[0].name}`);
+        NobleHouses.pop()
     }
-    else if(CasasNobres[0].forcaMilitar < CasasNobres[CasasNobres.length-1].forcaMilitar) {
-        console.log(`Combate > ${CasasNobres[0].name} VS ${CasasNobres[CasasNobres.length-1].name} \nForca Militar > ${CasasNobres[0].forcaMilitar} || ${CasasNobres[CasasNobres.length-1].forcaMilitar} \nVence> ${CasasNobres[CasasNobres.length-1].name}`);
-        CasasNobres.shift()
+    else if(NobleHouses[0].MilitaryForce < NobleHouses[NobleHouses.length-1].MilitaryForce) {
+        console.log(`Combate > ${NobleHouses[0].name} VS ${NobleHouses[NobleHouses.length-1].name} \nForca Militar > ${NobleHouses[0].MilitaryForce} || ${NobleHouses[NobleHouses.length-1].MilitaryForce} \nVence> ${NobleHouses[NobleHouses.length-1].name}`);
+        NobleHouses.shift()
         
     }
        
 } 
-    for (let i = 0; i < CasasNobres.length; i++) {
-        console.log(`A Casa vencedora é a ${CasasNobres[i].name} \n Com a Forca Militar > ${CasasNobres[i].forcaMilitar} `)
+    for (let i = 0; i < NobleHouses.length; i++) {
+        console.log(`A Casa vencedora é a ${NobleHouses[i].name} \n Com a Forca Militar > ${NobleHouses[i].MilitaryForce} `)
         
         
     }

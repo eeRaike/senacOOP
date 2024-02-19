@@ -6,7 +6,7 @@ export interface HouseRules {
     name: string;
     motto:string;
     heirList: Array<Heir>
-    forcaMilitar: number
+    MilitaryForce: number
     
 
     addHeir(heirInsert: Heir):void

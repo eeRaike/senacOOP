@@ -24,8 +24,8 @@ var Targaryen = /** @class */ (function (_super) {
         _this.Balerion = 20000;
         _this.Vhagar = 20000;
         _this.Meraxes = 20000;
-        _this.dragoes = _this.Balerion + _this.Vhagar + _this.Meraxes;
-        _this.forcaMilitar = _this.dragoes;
+        _this.dragons = _this.Balerion + _this.Vhagar + _this.Meraxes;
+        _this.MilitaryForce = _this.dragons;
         return _this;
     }
     return Targaryen;

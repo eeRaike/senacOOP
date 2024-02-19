@@ -21,8 +21,8 @@ var Tully = /** @class */ (function (_super) {
     __extends(Tully, _super);
     function Tully() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.soldados = 17000;
-        _this.forcaMilitar = _this.soldados;
+        _this.soldiers = 17000;
+        _this.MilitaryForce = _this.soldiers;
         return _this;
     }
     return Tully;

@@ -21,8 +21,8 @@ var Arryn = /** @class */ (function (_super) {
     __extends(Arryn, _super);
     function Arryn() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.soldados = 20000;
-        _this.forcaMilitar = _this.soldados;
+        _this.soldiers = 20000;
+        _this.MilitaryForce = _this.soldiers;
         return _this;
     }
     return Arryn;
