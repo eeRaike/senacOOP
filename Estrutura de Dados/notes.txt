@@ -1,0 +1,5 @@
+é possível usar string como iterador em for loop (MALUQUICE TÁ) 
+
+for(let i:string = "a"; i!= "abababa"; i+= "ba"){
+    console.log(i); // Imprime a, aba, ababa e abababa
+}
