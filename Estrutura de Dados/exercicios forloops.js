@@ -73,15 +73,40 @@ for (var i = 0; i < vowels.length; i++) {
         console.log(vowels[i], vowelCount);
     }
 }
-/*
-//1.
-console.log("\nEx.1");
-
-const array2 = [1,2,3,4,5,6]
-
-for (let i = 0; i < array2.length; i++) {
-    let a = array2[i] += array2[i+1]
-    console.log(a / array2.length)
-
+//3
+console.log("\nEx.3");
+var notas = [10, 6, 7, 5, 4];
+function calcAVG() {
+    var n = 0;
+    console.log("Notas> ".concat(notas));
+    for (var i = 0; i < notas.length; i++) {
+        n += notas[i];
+    }
+    return n = n / notas.length;
 }
-*/ 
+console.log("Média>", calcAVG());
+//3 ALT
+console.log("\nEx.3 ALT");
+console.log("Notas> ".concat(notas));
+var na = 0;
+for (var _a = 0, notas_1 = notas; _a < notas_1.length; _a++) {
+    var nota = notas_1[_a];
+    na += nota;
+}
+console.log("Média>", na / notas.length);
+//4
+console.log("\nEx.4");
+var aluno = {
+    math: 6,
+    hist: 9,
+    port: 7,
+    geo: 10,
+};
+var ne = 0;
+var objLength = 0;
+for (var key in aluno) {
+    console.log(key, ":", aluno[key]);
+    ne += aluno[key];
+    objLength++;
+}
+console.log(ne, ne / objLength);
