@@ -2,10 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Book = void 0;
 var Book = /** @class */ (function () {
-    function Book(title, autor, genre) {
+    function Book(title, autor) {
         this.title = title;
         this.autor = autor;
-        this.genre = genre;
     }
     return Book;
 }());
