@@ -1,0 +1,2 @@
+// importante:
+Fazer uma classe unica para todos os métodos(+ organização, + fácil de instanciar)

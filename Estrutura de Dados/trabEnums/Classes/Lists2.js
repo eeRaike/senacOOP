@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Lists2 = void 0;
-var BookStatus_1 = require("./BookStatus");
+var BookStatus_1 = require("../ENUMs/BookStatus");
 var Lists2 = /** @class */ (function () {
     function Lists2() {
         this.libraryBooks = [];
@@ -29,6 +29,13 @@ var Lists2 = /** @class */ (function () {
         for (var i = 0; i < this.libraryBooks.length; i++) {
             if (this.libraryBooks[i].status === BookStatus_1.BookStatus.Overdue) {
                 console.log(this.libraryBooks[i].title, this.libraryBooks[i].status);
+            }
+        }
+    };
+    Lists2.prototype.listGenre = function (varGenre) {
+        for (var i = 0; i < this.libraryBooks.length; i++) {
+            if (varGenre === this.libraryBooks[i].genre) {
+                console.log(this.libraryBooks[i].title, this.libraryBooks[i].genre);
             }
         }
     };

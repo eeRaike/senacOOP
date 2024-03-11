@@ -1,5 +1,7 @@
 import { Book } from "./Book";
-import { BookStatus } from "./BookStatus";
+import { BookGenre } from "../ENUMs/BookGenre";
+import { BookStatus } from "../ENUMs/BookStatus";
+import { UserMethods } from "./UserMethods";
 
 export class Lists2 {
 
@@ -48,5 +50,19 @@ export class Lists2 {
         }
 
     }
+    listGenre(varGenre: BookGenre){
+        for (let i = 0; i < this.libraryBooks.length; i++) {
+            if(varGenre === this.libraryBooks[i].genre ){
+                console.log(this.libraryBooks[i].title,this.libraryBooks[i].genre);
+                
+            }
+            
+        }
+    }
 
+    borrowBook(selectbook: Book){
+        const userArray = new UserMethods
+        this.listAvailable2()
+            userArray.usersArray
+    }
 }

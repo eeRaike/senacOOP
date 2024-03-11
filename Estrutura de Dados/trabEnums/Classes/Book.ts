@@ -1,5 +1,5 @@
-import { BookGenre } from "./BookGenre"
-import { BookStatus } from "./BookStatus"
+import { BookGenre } from "../ENUMs/BookGenre"
+import { BookStatus } from "../ENUMs/BookStatus"
 
 export class Book{
 
