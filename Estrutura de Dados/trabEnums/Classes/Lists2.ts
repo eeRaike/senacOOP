@@ -60,9 +60,5 @@ export class Lists2 {
         }
     }
 
-    borrowBook(selectbook: Book){
-        const userArray = new UserMethods
-        this.listAvailable2()
-            userArray.usersArray
-    }
+    
 }

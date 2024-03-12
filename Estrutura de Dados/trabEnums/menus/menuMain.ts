@@ -25,6 +25,9 @@ while(menu){
         case 2:
             userMethods.userRegister()
             break;
+        case 3:
+            userMethods.borrowBook(listar)
+            break;
         default:
             console.log("Por favor insira um numero valido");
             break;
