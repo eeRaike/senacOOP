@@ -55,6 +55,8 @@ export class UserMethods{
 
     borrowBook(list:Lists2){
         const rl = require('readline-sync');
+
+//For só ta servindo pra mostrar os usuarios e os livros (pretendo arrumar depois)
         for (let i = 0; i < this.usersArray.length; i++) {
             console.log(this.usersArray[i].userId,this.usersArray[i].userName);
             
@@ -74,6 +76,8 @@ export class UserMethods{
         
         let selectBook: number = rl.questionInt("\nSelecione o Livro \n> ")
 
+
+//parte importante e onde acontece o erro
         if(list.libraryBooks[selectBook].status === BookStatus.Available){
             this.usersArray[selectUser].userHistory.push(list.libraryBooks[selectBook])
         }
