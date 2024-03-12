@@ -5,7 +5,7 @@ export class UserClass implements UserInterface{
 
     userId: Number;
     userName: String;
-    userHistory: Book[];
+    userHistory: Book[] = [];
     userComms: Number;
 
     constructor(userId:Number,userName:String,userComms:Number){

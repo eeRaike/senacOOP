@@ -12,7 +12,7 @@ let select: number
 
 
 while(menu){
-    select = rl.questionInt("\nSelecione a funcao> \n1. Livros> \n2. Cadastrar Usuario \n3. Historico de Empréstimos \n4. Emprestimo de Livro \n5. Reserva de Livro \n6. Verificacao de Multa \n0. Fechar menu \n> ")
+    select = rl.questionInt("\nSelecione a funcao> \n1. Livros> \n2. Cadastrar Usuario \n3. Emprestimo de Livro \n4. Devolucao de Livro  \n5. Reserva de Livro \n6. Historico de Empréstimos \n7. Verificacao de Multa \n0. Fechar menu \n> ")
     switch(select){
         case 0:
             console.log("Fechando menu...");
@@ -26,7 +26,19 @@ while(menu){
             userMethods.userRegister()
             break;
         case 3:
-            userMethods.borrowBook(listar)
+            userMethods.lendBook(listar)
+            break;
+        case 4:
+            userMethods.retrieveBook(listar)
+            break;
+        case 5:
+
+            break;
+        case 6:
+            userMethods.showHistory()
+            break;
+        case 7:
+            //criar uma variavel multa que começa em 0; e aumenta seu valor cada dia que passar apos X dia
             break;
         default:
             console.log("Por favor insira um numero valido");
