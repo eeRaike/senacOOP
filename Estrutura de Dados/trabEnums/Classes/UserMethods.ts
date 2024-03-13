@@ -28,13 +28,14 @@ export class UserMethods{
     lendBook(list:Lists2){
         const rl = require('readline-sync');
 
-
+        console.log("\nSelecione o usuario ");
+        
         for (const user of this.usersArray) {
             console.log(user.userId,user.userName);
             
         }
 
-        let selectUser:number = rl.questionInt("\nSelecione o usuario \n> ");
+        let selectUser:number = rl.questionInt("\n> ");
 
         if(selectUser >= this.usersArray.length){
             console.log("Insira um usuario valido");
@@ -43,7 +44,7 @@ export class UserMethods{
         console.log(selectUser,this.usersArray[selectUser].userName);
         
         
-        console.log('\nLivros Disponiveis: \n',);
+        console.log('\nLivros Disponiveis: \nSelecione o Livro ');
             
             for (let i = 0; i < list.libraryBooks.length; i++) {
                 if(list.libraryBooks[i].status === BookStatus.Available){
@@ -52,11 +53,12 @@ export class UserMethods{
                 }
             }
         
-        let selectBook: number = rl.questionInt("\nSelecione o Livro \n> ")
+        let selectBook: number = rl.questionInt("\n> ")
 
 
         if(list.libraryBooks[selectBook].status === BookStatus.Available){
             this.usersArray[selectUser].userHistory.push(list.libraryBooks[selectBook])
+            list.libraryBooks[selectBook].lastUser = this.usersArray[selectUser]
             list.libraryBooks[selectBook].status = BookStatus.Borrowed
             
         }
@@ -66,29 +68,36 @@ export class UserMethods{
     }
     retrieveBook(list:Lists2){
         const rl = require('readline-sync')
-
-        console.log('\nLivros emprestados');
+        //checkpoint
         
-        for (let i = 0; i < list.libraryBooks.length; i++) {
-            if(list.libraryBooks[i].status === BookStatus.Borrowed || list.libraryBooks[i].status === BookStatus.Reserved || list.libraryBooks[i].status === BookStatus.Overdue ){
-                console.log(list.libraryBooks.indexOf(list.libraryBooks[i]),list.libraryBooks[i].title,list.libraryBooks[i].status);
-                
-            }
-        }
+        
+        
 
-        let selectBook: number = rl.questionInt("\nSelecione o livro para ser devolvido \n> ")
+        
+        console.log("\nSelecione o usuario que fara a devolucao");
+        
         for (const user of this.usersArray) {
             console.log(user.userId,user.userName);
             
         }
 
-        let selectUser:number = rl.questionInt("\nSelecione o usuario que fara a devolucao \n> ");
+        let selectUser:number = rl.questionInt("\n> ");
 
+       
         if(selectUser >= this.usersArray.length){
             console.log("Insira um usuario valido");
             return null;
         }
-        console.log(selectUser,this.usersArray[selectUser].userName);
+
+        console.log('\nLivros emprestados \nSelecione o livro para ser devolvido ');
+
+        for (let i = 0; i < list.libraryBooks.length; i++) {
+            if(list.libraryBooks[i].lastUser === this.usersArray[selectUser] ){
+                console.log(list.libraryBooks.indexOf(list.libraryBooks[i]),list.libraryBooks[i].title,list.libraryBooks[i].status);
+                
+            }
+        }
+        let selectBook: number = rl.questionInt("\n> ")
 
         let days: number = rl.questionInt("\nInsira quantos dias ficou com o Livro> ")
         
@@ -98,22 +107,31 @@ export class UserMethods{
         list.libraryBooks[selectBook].status = BookStatus.Available
         list.libraryBooks[selectBook].borrowedForDays = days
         
+        
+        if(list.libraryBooks[selectBook].borrowedForDays >= 10){
+            this.setFee(selectBook,list)
+        }
+
+        list.libraryBooks[selectBook].borrowedForDays = 0;
+        
     }
 
     showHistory(){
         const rl = require('readline-sync');
 
+        console.log("\nSelecione o usuario ");
+        
         for (const user of this.usersArray) {
             console.log(user.userId,user.userName);
             
         }
 
-        /*for (let i = 0; i < this.usersArray.length; i++) {
-            console.log(this.usersArray[i].userId,this.usersArray[i].userName);
-            
-        }*/
+        let selectUser = rl.questionInt("\n> ")
 
-        let selectUser = rl.questionInt("\nSelecione o usuario \n> ")
+        if(selectUser >= this.usersArray.length){
+            console.log("Insira um usuario valido");
+            return null;
+        }
         console.log(`\nHistorico de livros de ${this.usersArray[selectUser].userName}`);
         
        for (const livro of this.usersArray[selectUser].userHistory) {
@@ -126,17 +144,19 @@ export class UserMethods{
     reserveBook(list:Lists2){
         const rl = require('readline-sync')
         
-
+        console.log("\nSelecione o usuario");
+        
         for (const user of this.usersArray) {
             console.log(user.userId,user.userName);
             
         }
-        let selectUser:number = rl.questionInt("\nSelecione o usuario \n> ");
+        let selectUser:number = rl.questionInt("\n> ");
 
         if(selectUser >= this.usersArray.length){
             console.log("Insira um usuario valido");
             return null; 
         }
+console.log("\nSelecione o livro para ser reservado");
 
         for (let i = 0; i < list.libraryBooks.length; i++) {
             if(list.libraryBooks[i].status === BookStatus.Borrowed){
@@ -145,7 +165,7 @@ export class UserMethods{
             }
     }
 
-        let selectBook = rl.questionInt("\nSelecione o livro para ser reservado \n> ")
+        let selectBook = rl.questionInt("\n> ")
     if(list.libraryBooks[selectBook].status !== BookStatus.Borrowed){
         console.log("Insira um livro valido para reserva (Livros atualmente emprestados)");
     }else {
@@ -153,17 +173,7 @@ export class UserMethods{
         list.libraryBooks[selectBook].status = BookStatus.Reserved
         list.libraryBooks[selectBook].reservedBy = this.usersArray[selectUser]
 
-            /*notification = new Notif(this.usersArray[selectUser],selectBook)
-            console.log(notification.assignedUser.userName);
             
-            this.usersArray[selectUser].userNotifys.push(notification)
-           
-            
-            //notification = `${this.usersArray[selectUser].userName} o livro ${list.libraryBooks[selectBook].title} está Disponivel`
-            //this.notificationArray.push(notification)
-            //this.usersArray[selectUser].userNotifys.push(notification)
-            //this.usersArray[selectUser].userReserves.push(list.libraryBooks[selectBook])
-            console.log(`${this.usersArray[selectUser].userName} o livro ${list.libraryBooks[selectBook].title} foi ${list.libraryBooks[selectBook].status}`);*/
             
     }
         
@@ -181,90 +191,50 @@ export class UserMethods{
     
  }
 
+ setFee(book: number,list: Lists2){
 
+    for (let i = 0; i < list.libraryBooks[book].borrowedForDays; i++) {
+        if(i >= 10){
+            list.libraryBooks[book].lastUser.userFee += 1.00
+              
+        }
+        
+    }
+        console.log(list.libraryBooks[book].lastUser.userName,list.libraryBooks[book].lastUser.userFee);
+        
+
+
+
+ }
  checkFee(list:Lists2){
     const rl = require('readline-sync')
-
-    for (const user of this.usersArray) {
-        console.log(user.userId,user.userName);
         
-    }
-    let selectUser:number = rl.questionInt("\nSelecione o usuario \n> ");
-
-    if(selectUser >= this.usersArray.length){
-        console.log("Insira um usuario valido");
-        return null; 
-    }
-    
-    for (let i = 0; i < list.libraryBooks.length; i++) {
-        if(list.libraryBooks[i].status === BookStatus.Borrowed || list.libraryBooks[i].status === BookStatus.Overdue ){
-            console.log(list.libraryBooks.indexOf(list.libraryBooks[i]),list.libraryBooks[i].title,list.libraryBooks[i].status);
+        console.log("\nSelecione o usuario");
+        
+        for (const user of this.usersArray) {
+            console.log(user.userId,user.userName);
             
         }
-}
+        let selectUser:number = rl.questionInt("\n> ");
 
-    let selectBook = rl.questionInt("\nSelecione o livro \n> ")
-    list.libraryBooks[selectBook].lastUser = this.usersArray[selectBook]
+        if(selectUser >= this.usersArray.length){
+            console.log("Insira um usuario valido");
+            return null;
+        }
 
-    for (let i = 0; i < list.libraryBooks[selectBook].borrowedForDays; i++) {
-        if(list.libraryBooks[selectBook].borrowedForDays > 10){
-            list.libraryBooks[selectBook].lastUser.userFee += 1
+        if(this.usersArray[selectUser].userFee > 0){
+            console.log(`${this.usersArray[selectUser].userName} voce deve R$${this.usersArray[selectUser].userFee} de multa `);
             
-            
-            
+        } else{
+            console.log(`${this.usersArray[selectUser].userName} voce nao deve nada `);
             
         }
         
-    }
-    list.libraryBooks[selectBook].borrowedForDays = 0;
-    console.log(list.libraryBooks[selectBook].lastUser.userFee);
+        
+
 }
     
-        teste(list: Lists2){
-            const rl = require('readline-sync')
-            let selectbook = rl.questionInt("numeroblivro")
-            list.libraryBooks[selectbook].lastUser = this.usersArray[0]
-            list.libraryBooks[selectbook].lastUser.userFee = 1000
-            console.log(this.usersArray[0].userFee);
-            
 
-        }
-        
-    
- }
-/*
- notifyReserve(){
-   for (let i = 0; i < this.usersArray.length; i++) {
-    console.log(this.usersArray[i].userReserves.forEach(book => this.testf(book)));
-    
-    
-    
-    
-   }
     
  }
 
- testf(test:Book){
-    if(test.status === BookStatus.Available){
-        for (const notif of this.notificationArray) {
-            console.log(notif);
-        }
-        
-    }
-    
- }
- 
-*/
-
-/*notifyReserve(){
-    if(this.notificationArray.length <= 0){
-        return null;
-    }else{
-    for (let i = 0; this.notificationArray[i].assignedUser.userName != this.usersArray[i].userName; i++) {
-        console.log("teste");
-        
-        
-    }}
-
-}
-*/

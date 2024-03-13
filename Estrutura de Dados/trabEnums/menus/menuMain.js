@@ -42,9 +42,6 @@ var menuMain = /** @class */ (function () {
                 case 7:
                     userMethods.checkFee(listar);
                     break;
-                case 8:
-                    userMethods.teste(listar);
-                    break;
                 default:
                     console.log("Por favor insira um numero valido");
                     break;
