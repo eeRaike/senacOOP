@@ -13,7 +13,9 @@ var menuMain = /** @class */ (function () {
         var menu = true;
         var select;
         while (menu) {
-            select = rl.questionInt("\nSelecione a funcao> \n1. Livros> \n2. Cadastrar Usuario \n3. Emprestimo de Livro \n4. Devolucao de Livro  \n5. Reserva de Livro \n6. Historico de Empréstimos \n7. Verificacao de Multa \n0. Fechar menu \n> ");
+            listar.listStatus();
+            userMethods.notifyReserve(listar);
+            select = rl.questionInt("\nSelecione a funcao> \n1. Livros> \n2. Cadastrar Usuario \n3. Emprestimo de Livro \n4. Devolucao de Livro  \n5. Reserva de Livro \n6. Historico de Emprestimos \n7. Verificacao de Multa \n0. Fechar menu \n> ");
             switch (select) {
                 case 0:
                     console.log("Fechando menu...");
@@ -31,8 +33,17 @@ var menuMain = /** @class */ (function () {
                 case 4:
                     userMethods.retrieveBook(listar);
                     break;
+                case 5:
+                    userMethods.reserveBook(listar);
+                    break;
                 case 6:
                     userMethods.showHistory();
+                    break;
+                case 7:
+                    userMethods.checkFee(listar);
+                    break;
+                case 8:
+                    userMethods.teste(listar);
                     break;
                 default:
                     console.log("Por favor insira um numero valido");

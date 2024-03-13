@@ -4,6 +4,7 @@ exports.UserClass = void 0;
 var UserClass = /** @class */ (function () {
     function UserClass(userId, userName, userComms) {
         this.userHistory = [];
+        this.userFee = 0;
         this.userId = userId;
         this.userName = userName,
             this.userComms = userComms;

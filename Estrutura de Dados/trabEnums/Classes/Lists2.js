@@ -39,6 +39,13 @@ var Lists2 = /** @class */ (function () {
             }
         }
     };
+    Lists2.prototype.listStatus = function () {
+        for (var i = 0; i < this.libraryBooks.length; i++) {
+            if (this.libraryBooks[i].status === BookStatus_1.BookStatus.Borrowed && this.libraryBooks[i].borrowedForDays > 10) {
+                this.libraryBooks[i].status = BookStatus_1.BookStatus.Overdue;
+            }
+        }
+    };
     return Lists2;
 }());
 exports.Lists2 = Lists2;

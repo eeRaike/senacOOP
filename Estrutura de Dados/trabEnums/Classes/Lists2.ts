@@ -60,5 +60,16 @@ export class Lists2 {
         }
     }
 
+    listStatus(){
+        for (let i = 0; i < this.libraryBooks.length; i++) {
+            if(this.libraryBooks[i].status === BookStatus.Borrowed && this.libraryBooks[i].borrowedForDays > 10){
+                this.libraryBooks[i].status = BookStatus.Overdue
+                
+                
+            }
+            
+        }
+    }
+
     
 }

@@ -1,14 +1,16 @@
 import { UserInterface } from "../Interfaces/UserInterface";
 import { Book } from "./Book";
 
+
 export class UserClass implements UserInterface{
 
-    userId: Number;
+    userId: number;
     userName: String;
     userHistory: Book[] = [];
     userComms: Number;
+    userFee: number = 0;
 
-    constructor(userId:Number,userName:String,userComms:Number){
+    constructor(userId:number,userName:String,userComms:Number){
         this.userId = userId
         this.userName = userName,
         this.userComms = userComms
