@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var ClQueue_1 = require("./ClQueue");
+var queue = new ClQueue_1.Queue;
+queue.enqueue("a");
+queue.enqueue("b");
+queue.enqueue("c");
+queue.peek();
+queue.getSize();
+queue.dequeue;
+queue.getSize();
+queue.isEmpty();
