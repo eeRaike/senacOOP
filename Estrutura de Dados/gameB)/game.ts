@@ -1,4 +1,4 @@
-class player{
+class Player{
     x:number;
     width:number;
     height:number;
@@ -16,7 +16,7 @@ class player{
     }
 }
 
-class obstacle{
+class Obstacle{
     x: number;
     y: number;
     width: number;
@@ -47,4 +47,26 @@ class obstacle{
 
 class Game{
 
+    private player: Player;
+    private obstacles: Obstacle[]
+    private speed: number;
+    private gameOver: Boolean;
+
+    constructor(private canvas: HTMLCanvasElement, private ctx: CanvasRenderingContext2D | null) {
+        this.player = new Player(canvas,ctx);
+        this.obstacles = [];
+        this.speed = 4
+        this.gameOver = false;
+        canvas.addEventListener('mousemove', this.movePlayer.bind(this));
+    }
+
+    movePlayer(event: MouseEvent):void{
+        this.player.x = event.clientX - this.canvas.offsetLeft
+    }
+
+    updateObstacles():void {
+        if(!this.gameOver) {
+            
+        }
+    }
 }
