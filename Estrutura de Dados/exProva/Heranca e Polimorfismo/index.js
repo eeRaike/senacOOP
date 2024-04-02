@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Carlos_1 = require("./Carlos");
+var Joana_1 = require("./Joana");
+var Manoel_1 = require("./Manoel");
+var manoel = new Manoel_1.Manoel("Manoel", 87, true);
+var carlos = new Carlos_1.Carlos("Carlos", 56, true, "castanho");
+var joana = new Joana_1.Joana("Joana", 18, true, "castanho-claro", "shhhh é secreto");
+manoel.agir();
+carlos.agir();
+joana.agir();
+carlos.rir();
+joana.dancar();
+joana.contarSegredo();
