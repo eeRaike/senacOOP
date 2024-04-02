@@ -1,0 +1,75 @@
+1. O encapsulamento é alcançado usando:
+- [ ]  A palavra-chave `public` para tornar membros acessíveis de fora da classe.
+- [ ]  A palavra-chave `private` para limitar o acesso aos membros apenas dentro da classe.
+- [ ]  A palavra-chave `protected` para permitir acesso aos membros apenas dentro da classe e suas subclasses.
+- [X]  Todas as opções acima.
+
+2. Qual é a maneira correta de definir uma classe filha que herda propriedades e métodos de uma classe pai?
+- [X]  Usando a palavra-chave `extends` na declaração da classe filha.
+- [ ]  Copiando e colando o código da classe pai para a classe filha.
+- [ ]  Usando a palavra-chave `inherits` na declaração da classe filha.
+- [ ]  Não é possível herdar propriedades e métodos.
+
+3. As interfaces são usadas para:
+- [X]  Definir estruturas de dados e contratos para objetos.
+- [ ]  Implementar funcionalidades específicas em classes.
+- [ ]  Definir métodos privados em classes.
+- [ ]  Nenhuma das opções acima.
+
+4. O polimorfismo refere-se a:
+- [ ]  A capacidade de uma classe ter múltiplos construtores.
+- [X]  A capacidade de uma classe ter múltiplos métodos com o mesmo nome, mas com diferentes implementações.
+- [ ]  A capacidade de uma classe herdar de múltiplas classes pai.
+- [ ]  A capacidade de uma classe encapsular múltiplos objetos.
+
+5.Qual é a diferença fundamental entre herança de classes e implementação de interfaces?
+- [X]  Herança de classes permite a reutilização de código, enquanto interfaces não.
+- [ ]  Implementação de interfaces permite a reutilização de código, enquanto herança de classes não.
+- [ ]  Herança de classes é mais flexível do que implementação de interfaces.
+- [ ]  Não há diferença entre herança de classes e implementação de interfaces.
+
+6. Qual das seguintes estruturas de dados é mais adequada para implementar um sistema de gerenciamento de tarefas em um aplicativo de lista de afazeres, onde as tarefas são adicionadas no final, removidas do início e processadas na ordem em que foram adicionadas?
+- [ ]  Pilha.
+- [X]  Fila.
+- [ ]  Lista.
+
+7. Qual é a vantagem de usar getters e setters em classes?
+- [ ]  Eles melhoram a legibilidade do código.
+- [X]  Eles facilitam a manipulação de dados privados.
+- [ ]  Eles evitam a necessidade de encapsulamento.
+- [ ]  Nenhuma das opções acima.
+
+8. O que é um construtor em uma classe?
+- [ ]  Um método usado para criar instâncias da classe.
+- [X]  Um método especial que é automaticamente invocado quando uma instância da classe é criada.
+- [ ]  Um método usado para destruir instâncias da classe.
+- [ ]  Um método usado para modificar propriedades da classe após sua criação
+
+9. Como enumeradores são definidos e qual sua finalidade?
+- [X]  Enumeradores são definidos usando a palavra-chave enum e são usados para representar um conjunto de valores nomeados. Por exemplo, enumerações podem ser usadas para representar dias da semana ou estados de um objeto.
+- [ ]  Enumeradores são definidos usando a palavra-chave enum e são usados apenas para criar coleções de constantes numéricas.
+- [ ]  Enumeradores são definidos usando a palavra-chave enum e são usados exclusivamente para definir métodos dentro de uma classe.
+- [ ]  Enumeradores são definidos usando a palavra-chave enum e são usados apenas para declarar variáveis dentro de funções.
+
+10. Como TypeScript lida com a visibilidade de membros (public, private, protected) em classes?
+- [ ]  TypeScript não suporta visibilidade de membros em classes.
+- [ ]  A visibilidade de membros em TypeScript é determinada pelo contexto de execução.
+- [ ]  TypeScript ignora completamente as palavras-chave de visibilidade.
+- [X]  TypeScript respeita as palavras-chave de visibilidade e impõe restrições de acesso conforme especificado.
+
+
+Questões de interpretação de código:
+
+1) A ideia é que seria impresso a propriedade "name" porém como ela é uma propriedade privada, ocorreria um erro. A maneira de corrigir isso, seria utilizando "person.getName()" no console.log ao invés de "person.name"
+
+2) log 1: Woof!
+log 2: This dog is a Golden Retriever breed.
+log 3: Fetching...
+
+3)A classe Square extendendo ("extends") a classe Shape, fazendo com que objetos da Classe "Square" não sejam válidos dentro do Shape[ ] ("array do tipo Shape")
+
+4)O erro começa na interface, a qual não é capaz de receber lógica dentro de suas propriedades.
+
+5)será mostrado no console: Next day: 4
+
+Questões de escrita de código
