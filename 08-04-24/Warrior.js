@@ -10,7 +10,8 @@ var warrior = /** @class */ (function () {
     }
     warrior.prototype.dealDamage = function (target) {
         console.log("\n".concat(this.name, " ataca ").concat(target.name, "\n"));
-        target.receiveDamage(this.strength);
+        var damage = Math.floor(Math.random() * this.strength);
+        target.receiveDamage(damage);
     };
     warrior.prototype.receiveDamage = function (damage) {
         this.HP = this.HP - damage;
@@ -18,7 +19,7 @@ var warrior = /** @class */ (function () {
             console.log("".concat(this.name, " est\u00E1 morto \nGame Over"));
         }
         else {
-            console.log("".concat(this.name, " HP atual: ").concat(this.HP));
+            console.log("".concat(this.name, " recebeu ").concat(damage, " HP atual: ").concat(this.HP));
         }
     };
     warrior.prototype.getInfo = function () {

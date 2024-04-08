@@ -15,7 +15,8 @@ export class warrior {
 
     dealDamage(target:monster): void{
         console.log(`\n${this.name} ataca ${target.name}\n`);
-        target.receiveDamage(this.strength)
+        let damage: number = Math.floor(Math.random() * this.strength)
+        target.receiveDamage(damage)
     }
     receiveDamage(damage:number): void{
         this.HP = this.HP - damage
@@ -23,7 +24,7 @@ export class warrior {
             console.log(`${this.name} está morto \nGame Over`);
             
         } else {
-            console.log(`${this.name} HP atual: ${this.HP}`);
+            console.log(`${this.name} recebeu ${damage} HP atual: ${this.HP}`)
             
         }
 
