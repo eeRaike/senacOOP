@@ -20,11 +20,11 @@ export class warrior {
     }
     receiveDamage(damage:number): void{
         this.HP = this.HP - damage
-        if(this.HP === 0){
+        if(this.HP <= 0){
             console.log(`${this.name} está morto \nGame Over`);
             
         } else {
-            console.log(`${this.name} recebeu ${damage} HP atual: ${this.HP}`)
+            console.log(`${this.name} recebeu ${damage} de dano HP atual: ${this.HP}`)
             
         }
 

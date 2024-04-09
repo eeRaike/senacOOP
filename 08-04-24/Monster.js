@@ -14,11 +14,11 @@ var monster = /** @class */ (function () {
     };
     monster.prototype.receiveDamage = function (damage) {
         this.HP = this.HP - damage;
-        if (this.HP === 0) {
-            console.log("".concat(this.name, " est\u00E1 morto \nGame Over"));
+        if (this.HP <= 0) {
+            console.log("".concat(this.name, " est\u00E1 morto \nBatalha finalizada"));
         }
         else {
-            console.log("".concat(this.name, " recebeu ").concat(damage, " HP atual: ").concat(this.HP));
+            console.log("".concat(this.name, " recebeu ").concat(damage, " de dano HP atual: ").concat(this.HP));
         }
     };
     monster.prototype.getInfo = function () {

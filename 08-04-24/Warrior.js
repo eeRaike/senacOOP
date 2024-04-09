@@ -15,11 +15,11 @@ var warrior = /** @class */ (function () {
     };
     warrior.prototype.receiveDamage = function (damage) {
         this.HP = this.HP - damage;
-        if (this.HP === 0) {
+        if (this.HP <= 0) {
             console.log("".concat(this.name, " est\u00E1 morto \nGame Over"));
         }
         else {
-            console.log("".concat(this.name, " recebeu ").concat(damage, " HP atual: ").concat(this.HP));
+            console.log("".concat(this.name, " recebeu ").concat(damage, " de dano HP atual: ").concat(this.HP));
         }
     };
     warrior.prototype.getInfo = function () {

@@ -1,18 +1,14 @@
-import { warrior } from "./Warrior";
+import { Entity } from "./Entity";
 
-export class monster {
 
-    HP: number;
-    name: string;
-    strength: number;
+export class monster extends Entity {
 
-    constructor(in_name:string,){
-        this.HP = 10,
-        this.name = in_name,
-        this.strength = 50; 
+    constructor(){
+        super()
+        
     }
 
-    dealDamage(target:warrior){
+    basicAttack(target:Entity){
         console.log(`\n${this.name} ataca ${target.name}\n`);
         let damage: number = Math.floor(Math.random() * this.strength)
         target.receiveDamage(damage)
@@ -21,7 +17,7 @@ export class monster {
     receiveDamage(damage:number){
         this.HP = this.HP - damage
         if(this.HP <= 0){
-            console.log(`${this.name} está morto \nBatalha finalizada`);
+            console.log(`${this.name} está morto `);
             
         } else {
             console.log(`${this.name} recebeu ${damage} de dano HP atual: ${this.HP}`);
