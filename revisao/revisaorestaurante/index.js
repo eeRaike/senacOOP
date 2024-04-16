@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var listaGar_1 = require("./listaGar");
+var pedido_1 = require("./pedido");
+var tipoPedido_1 = require("./tipoPedido");
+var teste1 = new pedido_1.pedido("teste1", tipoPedido_1.tipoPedido.sobremesa);
+var teste2 = new pedido_1.pedido("teste2", tipoPedido_1.tipoPedido.pratoPrinc);
+var teste3 = new pedido_1.pedido("teste3", tipoPedido_1.tipoPedido.bebida);
+var teste4 = new pedido_1.pedido("teste4", tipoPedido_1.tipoPedido.sobremesa);
+var testGar = new listaGar_1.listaGar();
+testGar.listInsert(teste1);
+testGar.listInsert(teste2);
+testGar.listInsert(teste3);
+testGar.listInsert(teste4);
+testGar.testCheck();
